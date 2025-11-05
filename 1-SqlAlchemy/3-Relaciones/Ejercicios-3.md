@@ -64,3 +64,5 @@ erDiagram
     }
 ```
 ---
+
+2) cree Clientes y Pasaporte , y luego imprima los clientes con sus repectivos pasaportes 
