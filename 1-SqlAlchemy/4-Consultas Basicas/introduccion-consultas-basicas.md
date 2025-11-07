@@ -145,3 +145,7 @@ session.commit()
 | **MIN con GROUP BY** | `select(Cliente.nombre, func.min(Factura.total)).join(Factura).group_by(Cliente.id)` | SELECT cliente.nombre, MIN(factura.total) FROM cliente JOIN factura ON cliente.id = factura.cliente_id GROUP BY cliente.id; | Mínima factura por cliente     |
 
 [VOLVER ARRIBA ↑](#indice)
+[Ejercicios](python-sql-Ejercicios-4.md)
+
+Si hiciste todos los ejercicios estas listo para rendir el Integrador __intenta no usar chatGpt para la resolucion Directa__
+[Integrador](../5-Ejercicio-Integrador/python-sql-Integrador-1.md)

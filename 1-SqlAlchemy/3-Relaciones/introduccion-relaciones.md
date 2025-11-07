@@ -221,3 +221,5 @@ erDiagram
     }
 ```
 [Volver Arriba ↑](#índice)
+[EJericios](python-sql-Ejercicios-3.md)
+[Siguiente Tema: Consultas Basicas](../4-Consultas%20Basicas/introduccion-consultas-basicas.md)
