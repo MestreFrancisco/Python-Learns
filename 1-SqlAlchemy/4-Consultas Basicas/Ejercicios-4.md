@@ -2,8 +2,9 @@
 
 ```python
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy import create_engine , select , func
+from sqlalchemy.orm import Session 
+from tabla import Cliente , Factura
 
 engine = create_engine("sqlite:///facturacion.db")
 ```
