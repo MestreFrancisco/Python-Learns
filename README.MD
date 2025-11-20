@@ -16,4 +16,20 @@ Distintos temas estaran con el paso del tiempo , cada carpeta tendran partes del
 + [Consultas Basicas](/1-SqlAlchemy/4-Consultas%20Basicas/introduccion-consultas-basicas.md)
 + [Integrador I](/1-SqlAlchemy/5-Ejercicio-Integrador/python-sql-Integrador-1.md)
 
+
+## Instalar
+
+Debemos Instalar las siguientes depedendencias para aprender backend
+
+```bash
+
+pip install sqlalchemy
+pip install fastapi
+pip install uvicorn["standard"]
+
+```
+---
++ SQLAlchemy
++ fastapi
+
 >ℹ Se Agregaran mas temas mas adelante
