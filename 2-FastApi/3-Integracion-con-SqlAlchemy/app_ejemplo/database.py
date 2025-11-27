@@ -1,12 +1,18 @@
 from sqlalchemy.orm import DeclarativeBase , sessionmaker
 from sqlalchemy import create_engine 
+from pathlib import Path
+from sqlalchemy import create_engine
+
+# Ruta absoluta hacia la carpeta del script
+db_path = Path(__file__).parent / "mi_base.db"
+
+# Crear engine con SQLite apuntando a esa ruta
 
 #clase Base → DeclarativeBase
 class Base(DeclarativeBase):
     pass
 
-#Crear el engine
-engine = create_engine("sqlite:///facturacion.db",connect_args={"check_same_thread":False})
+engine = create_engine(f"sqlite:///{db_path}",connect_args={"check_same_thread":False},echo=True)
 
 # Crear una session
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
