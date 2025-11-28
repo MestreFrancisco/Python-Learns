@@ -309,9 +309,9 @@ si no te carga el server usar para killear el server
 ```bash
 taskkill /PID 12868 /F
 ```
----
+
 para ver la lista de puertos usar
----
+
 ```bash
 netstat -ano | findstr :8000
   TCP    127.0.0.1:8000         0.0.0.0:0              LISTENING       12868
