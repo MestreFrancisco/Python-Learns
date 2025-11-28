@@ -77,36 +77,42 @@ cliente_id: Mapped[int] = mapped_column(
 )
 
 ```
-+ Eventualmente debes hacer lo mismo para detalles
-
 
 ## 3) Creacion de Schemas
 
 ModelBase → ModelCreate → Model (con orm_mode=True)
 
-## 4) Crear archivo CRUD
+## 4) Archivo CRUD 
 
 CRUD completo para:
 
 + ####  Categoría
-    + READ , CREATE
+    + get
+    + get categoria por id
 + #### Producto
-    + READ , CREATE
+    + get
+    + get_producto por id
 + #### Cliente
-    + READ , DELETE , CREATE
+    + get
+    + get_cliente por id
+    + delete_cliente por id
+    + get_total pedido cliente por id
 + #### Pedido
-    + READ , CREATE
+    + get
+    + get_categoria por id
 + #### DetallePedido
-    + READ , CREATE
+    + get
+    + get_categoria por id
+
 ## 5) Crear endpoints en main.py 
 
-### CATEGORIAS
+#### CATEGORIAS
 
 + POST /categorias
 
 + GET /categorias
 
-### PRODUCTOS
+#### PRODUCTOS
 
 + POST /productos
 
@@ -114,7 +120,7 @@ CRUD completo para:
 
 + GET /productos/{id}
 
-### CLIENTES
+#### CLIENTES
 
 + POST /clientes
 
@@ -122,9 +128,12 @@ CRUD completo para:
 
 + GET /clientes/{id}
 
++ GET /clientes/{id}/total 
+    + Cree un metodo que devuelta el total del pedido de un cliente mediante un id
+    + Debes crear los metodos dentro de las clases o crud.
 + DELET /clientes/{id}
 
-### PEDIDOS
+#### PEDIDOS
 
 + POST /pedidos (solo fecha + cliente)
 
