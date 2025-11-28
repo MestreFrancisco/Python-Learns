@@ -88,42 +88,46 @@ ModelBase → ModelCreate → Model (con orm_mode=True)
 
 CRUD completo para:
 
-+ Categoría
-
-+ Producto
-
-+ Cliente
-
-+ Pedido
-
-+ DetallePedido
-
++ ####  Categoría
+    + READ , CREATE
++ #### Producto
+    + READ , CREATE
++ #### Cliente
+    + READ , DELETE , CREATE
++ #### Pedido
+    + READ , CREATE
++ #### DetallePedido
+    + READ , CREATE
 ## 5) Crear endpoints en main.py 
 
 ### CATEGORIAS
 
-POST /categorias
++ POST /categorias
 
-GET /categorias
++ GET /categorias
 
 ### PRODUCTOS
 
-POST /productos
++ POST /productos
 
-GET /productos
++ GET /productos
 
-GET /productos/{id}
++ GET /productos/{id}
 
 ### CLIENTES
 
-POST /clientes
++ POST /clientes
 
-GET /clientes
++ GET /clientes
+
++ GET /clientes/{id}
+
++ DELET /clientes/{id}
 
 ### PEDIDOS
 
-POST /pedidos (solo fecha + cliente)
++ POST /pedidos (solo fecha + cliente)
 
-POST /pedidos/{id_pedido}/detalles (agrega detalles)
++ POST /pedidos/{id_pedido}/detalles (agrega detalles)
 
-GET /pedidos/{id} (incluye detalles)
++ GET /pedidos/{id} (incluye detalles)
