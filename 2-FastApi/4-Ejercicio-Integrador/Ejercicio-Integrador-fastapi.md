@@ -128,9 +128,6 @@ CRUD completo para:
 
 + GET /clientes/{id}
 
-+ GET /clientes/{id}/total 
-    + Cree un metodo que devuelta el total del pedido de un cliente mediante un id
-    + Debes crear los metodos dentro de las clases o crud.
 + DELET /clientes/{id}
 
 #### PEDIDOS

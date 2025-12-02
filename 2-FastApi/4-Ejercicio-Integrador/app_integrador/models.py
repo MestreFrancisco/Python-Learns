@@ -13,12 +13,7 @@ class Cliente(Base):
     #Relacion con pedidos
     pedidos:Mapped[list["Pedido"]]=relationship(back_populates="cliente" ,cascade="all, delete-orphan")
 
-    def get_total(self):
-        t=0
-        for p in self.pedidos:
-            t += p.total
-
-        return t
+   
 
 class Pedido(Base):
     __tablename__ = "Pedido"
@@ -35,9 +30,11 @@ class Pedido(Base):
 
     total:Mapped[float]=mapped_column(Float,default=0.0)
 
-    def add_detalle_pedido(self,dp:"DetallePedido"):
-        self.detalles_de_pedidos.append(dp)
-        self.total += dp.subtotal
+    def set_total(self):
+        self.total = sum(detalle.subtotal for detalle in self.detalles_de_pedidos)
+
+    def get_total(self):
+        return self.total
 
 class DetallePedido(Base):
     __tablename__ = "DetallePedido"
@@ -54,10 +51,11 @@ class DetallePedido(Base):
     cantidad:Mapped[int] = mapped_column(Integer,default=1)
     subtotal:Mapped[float]=mapped_column(Float,default=0.0)
     
+    def set_subtotal(self):
+        self.subtotal = self.cantidad * self.producto.precio
     
-    def add_producto(self,p:"Producto"):
-        self.producto=p
-        self.subtotal=p.precio*self.cantidad
+    def get_subtotal(self):
+        return self.set_subtotal
 
 class Producto(Base):
     __tablename__ = "Producto"
@@ -83,4 +81,3 @@ class Categoria(Base):
     nombre:Mapped[str] = mapped_column(String(40))
     
     productos:Mapped[list["Producto"]]=relationship(back_populates="categoria")
-    

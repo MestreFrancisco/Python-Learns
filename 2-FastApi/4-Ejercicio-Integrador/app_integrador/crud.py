@@ -39,6 +39,11 @@ def get_pedido(db:Session):
 
 def cr_pedido(db: Session,id_cliente: int):
     pedido = models.Pedido(cliente_id=id_cliente) 
+    try:
+        pedido.set_total()
+    except:
+        pass
+    
     db.add(pedido)
     db.commit()
     db.refresh(pedido)
